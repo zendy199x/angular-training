@@ -1,0 +1,15 @@
+{{name}}
+
+<!-- {{expressiom}} -->
+<p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+
+
+<!--<input [type]="'text'" value="vaasd">-->
+<!--<input [type]="inputType" [value]="user.name">-->
+<input type="text" [value]="user.name">
+
+<button type="button" (click)="handler($event)">Click me</button>
+<br><br>
+<!--<input type="text" [(ngModel)]="name"/>-->
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event"/>
