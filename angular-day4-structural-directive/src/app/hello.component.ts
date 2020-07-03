@@ -1,0 +1,19 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  // tslint:disable-next-line: component-selector
+  selector: 'hello',
+  template: `<h1>Hello {{name}}!</h1>`,
+  styles: [`h1 { font-family: Lato; }`]
+})
+export class HelloComponent {
+  @Input() name: string;
+
+  ngOnInit = () => {
+    console.log('Hello Init');
+  }
+
+  ngOnDestroy = () => {
+    console.log('Hello destroy');
+  }
+}
