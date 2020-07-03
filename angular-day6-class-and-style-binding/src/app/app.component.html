@@ -1,0 +1,68 @@
+<hello name="{{ name }}"></hello>
+
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+
+<!-- Syntax Class -->
+<!--
+- [class.name-class]
+- [class] = "array"
+- [class] = "object" {[name-class: string]: boolean}
+- [class] = "variable"
+-->
+
+<!-- [class.name-class] -->
+<div
+	class="box"
+	[class.red-border]="isDanger"
+	[class.yellow-background]="isWarning"
+></div>
+
+<!-- [class] = "array" -->
+<div class="box" [class]="['red-border', 'yellow-background']"></div>
+
+<!-- [class] ="object" -->
+<div
+	class="box"
+	[class]="{'red-border': isDanger, 'yellow-background': isWarning}"
+></div>
+
+<!-- [class] = "variable" -->
+<!-- <div [ngClass]="classes"></div> -->
+<div [class]="classes"></div>
+
+<!-- -------------------------------------------------------------- -->
+<!-- Syntax Style -->
+<!--
+- [style.nameStyle]
+- [style.name-style]
+- [style.nameStyle.unit]
+- [style] = "object"
+- [style.css-variable]
+-->
+
+<!--
+- [style.nameStyle]
+- [style.name-style]
+- [style.nameStyle.unit]
+-->
+<p
+	[style.color]="'red'"
+	[style.backgroundColor]="'yellow'"
+	[style.fontSize.px]="20"
+>
+	Start editing to see some magic happen :)
+</p>
+
+<!-- [style] = "object" -->
+<p
+	[style.--text-color]="isDanger ? 'red' : 'blue'"
+	[style]="{
+		color: 'var(--text-color)',
+		backgroundColor: 'yellow',
+		fontSize: '2rem'
+	}"
+>
+	Start editing to see some magic happen :)
+</p>
