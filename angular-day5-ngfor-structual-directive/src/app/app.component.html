@@ -1,0 +1,85 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+
+<!--
+  if (users.length > 0) {
+    for (let something of users) {
+
+    }
+  } else {
+
+  }
+  - $implicit: item Implicit Context Variable
+  - index: số thứ tự của item hiện tại.form
+  - count: độ dài của array.
+  - first: true nếu như item đó là item đầu tiên trong array.
+  - last: false nếu như item đố là item cuối cùng trong array.
+  - even: true nếu như item đó là item ở vị trí chẵn.
+  - odd: true nếu như item đó là item ở vị trí lẻ.
+-->
+
+<ul>
+	<ng-container *ngIf="users.length > 0; else noUsers">
+		<li
+			*ngFor="
+				let u of users;
+				index as idx;
+				count as total;
+				first as isFirst;
+				last as isLast;
+				even as isEven;
+				odd as isOdd
+			"
+		>
+			<span>{{ u.name }} - {{ u.id }} - {{ u.phone }}</span>
+			<br />
+			<span>at index {{ idx }} out of {{ total }}</span>
+			<br />
+			<span *ngIf="isEven">I am even number</span>
+			<br />
+			<span *ngIf="isOdd">I am odd number</span>
+			<br />
+			<span *ngIf="isFirst">I am first</span>
+			<br />
+			<span *ngIf="isLast">I am last</span>
+			<br />
+		</li>
+	</ng-container>
+	<ng-template #noUsers>
+		No User
+	</ng-template>
+</ul>
+<!--
+<ul>
+	<ng-template
+		ngFor
+		[ngForOf]="users"
+		let-u
+		let-idx="index"
+		let-total="count"
+		let-isFirst="first"
+		let-isLast="last"
+		let-isEven="even"
+		let-isOdd="odd"
+	>
+		<li>
+			<span>{{ u.name }} - {{ u.id }} - {{ u.phone }}</span>
+			<br />
+			<span>at index {{ idx }} out of {{ total }}</span>
+			<br />
+			<span *ngIf="isEven">I am even number</span>
+			<br />
+			<span *ngIf="isOdd">I am odd number</span>
+			<br />
+			<span *ngIf="isFirst">I am first</span>
+			<br />
+			<span *ngIf="isLast">I am last</span>
+			<br /></li
+	></ng-template>
+</ul> -->
+
+<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">
+	{{ tag }}
+</button>

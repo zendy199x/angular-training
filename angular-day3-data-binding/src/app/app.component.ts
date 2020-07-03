@@ -18,7 +18,7 @@ export class AppComponent {
     age: 27
   };
 
-  handler = (event) => {
+  handler = (event: any) => {
     console.log('clicked', event);
   }
 }
