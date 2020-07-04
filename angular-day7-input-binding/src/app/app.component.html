@@ -1,0 +1,12 @@
+<p>
+	Start editing to see some magic happen :)
+</p>
+<button (click)="currentProgress = currentProgress + 1">Increase Progress</button>
+
+<progress-bar></progress-bar>
+<br />
+<progress-bar
+	[progress]="currentProgress"
+	[progressColor]="'dodgerblue'"
+></progress-bar>
+<br />
