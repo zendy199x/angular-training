@@ -17,7 +17,7 @@ export class AuthorListComponent {
   authors = authors;
   currentAuthor = authors[0];
 
-  onSelected(selectedAuthor: Author): any {
+  onSelected(selectedAuthor: Author): void {
     this.currentAuthor = selectedAuthor;
   }
 
