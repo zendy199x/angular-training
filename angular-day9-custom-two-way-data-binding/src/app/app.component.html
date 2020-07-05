@@ -1,0 +1,10 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+
+<!-- <input type="text" [(ngModel)]="name" /> -->
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+
+<app-toogle [(checked)]="isChecked"></app-toogle>
+<!-- <app-toogle></app-toogle> -->
