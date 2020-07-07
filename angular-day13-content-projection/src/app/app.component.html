@@ -1,0 +1,30 @@
+<h1>
+	Angular sample project for Angular 100 Days of Code
+</h1>
+<h2>
+	Day 13: Content Projection in Angular
+</h2>
+
+<br />
+
+<app-toggle [(checked)]="questions.question1">
+	<h3 class="header">Header 1</h3>
+	<label>Question 1</label>
+	<p>Content 1</p>
+</app-toggle>
+
+<app-toggle [(checked)]="questions.question2">
+	<h3 class="header">Header 2</h3>
+	<!-- <label>Question 2</label> -->
+	<!-- <span>Question 2</span> -->
+	<ng-container ngProjectAs="label">Question 2</ng-container>
+	<p>Content 2</p>
+	<button>Skip</button>
+</app-toggle>
+
+<p>
+	Design by:
+	<a href="https://dribbble.com/shots/4707036-Switcher-XXXVIII" target="_blank"
+		>Oleg Frolov</a
+	>
+</p>
